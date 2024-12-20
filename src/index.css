@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  height: 8px; /* For horizontal scrollbars */
+  width: 8px; /* For vertical scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Dark background for the scrollbar track */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4040; /* Red scrollbar thumb to match your site's theme */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7373; /* Slightly lighter red when hovered */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4040 #1a1a1a;
+}
