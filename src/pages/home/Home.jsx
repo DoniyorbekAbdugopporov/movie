@@ -28,6 +28,7 @@ const Home = () => {
     request("/discover/movie", {
       params: {
         page,
+        without_genres: "18,10749, 99",
         with_genres: selectedGenre.join(","),
       },
     })
