@@ -114,7 +114,6 @@ const Details = () => {
 
   return (
     <div className="bg-secondary">
-      <Header />
       <div className="flex flex-col items-center">
         <div className="w-[1360px] h-[640px] relative">
           <img
@@ -221,7 +220,6 @@ const Details = () => {
       </div>
 
       <Movies isDetail={true} data={similar} />
-      <Footer />
     </div>
   );
 };
