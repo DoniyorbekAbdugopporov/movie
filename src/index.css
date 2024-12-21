@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* For Chrome, Edge, and Safari */
+For Chrome, Edge, and Safari
 ::-webkit-scrollbar {
   height: 8px; /* For horizontal scrollbars */
   width: 8px; /* For vertical scrollbars */
@@ -26,4 +26,5 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: #ff4040 #1a1a1a;
+  
 }
