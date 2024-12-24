@@ -13,58 +13,57 @@ const Header = () => {
     en: {
       navItems: [
         { to: "/", icon: header1, label: "Schedule" },
-        { to: "/", icon: header2, label: "Sessions" },
-        { to: "/", icon: header3, label: "Tickets" },
-        { to: "/", icon: header4, label: "Search" },
+        { to: "/movies", icon: header2, label: "Movies" },
+        { to: "/saved", icon: header3, label: "Saved" },
+        { to: "/search", icon: header4, label: "Search" },
       ],
       login: "Login",
     },
     ru: {
       navItems: [
         { to: "/", icon: header1, label: "Афиша" },
-        { to: "/", icon: header2, label: "Сеансы" },
-        { to: "/", icon: header3, label: "Билеты" },
-        { to: "/", icon: header4, label: "Поиск" },
+        { to: "/movies", icon: header2, label: "Фильмы" },
+        { to: "/saved", icon: header3, label: "Сохранено" },
+        { to: "/search", icon: header4, label: "Поиск" },
       ],
       login: "Войти",
     },
     uz: {
       navItems: [
         { to: "/", icon: header1, label: "Jadval" },
-        { to: "/", icon: header2, label: "Seanslar" },
-        { to: "/", icon: header3, label: "Chiptalar" },
-        { to: "/", icon: header4, label: "Qidiruv" },
+        { to: "/movies", icon: header2, label: "Kinolar" },
+        { to: "/saved", icon: header3, label: "Saqlanganlar" },
+        { to: "/search", icon: header4, label: "Qidiruv" },
       ],
       login: "Kirish",
     },
   };
 
-  const currentTranslation = translations[language];
+  const { navItems, login } = translations[language];
 
   return (
     <header className="bg-black text-white pt-2">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
         <div>
-          <img src={logo} alt="Logo" className="w-24 h-auto" />
+          <img src={logo} alt="App Logo" className="w-24 h-auto" />
         </div>
 
+        {/* Navigation */}
         <nav className="flex items-center space-x-6">
-          {currentTranslation.navItems.map((item, index) => (
+          {navItems.map((item, index) => (
             <Link
               key={index}
               to={item.to}
-              className="flex flex-col items-center justify-center space-x-2 hover:text-red-500"
+              className="flex flex-col items-center justify-center hover:text-red-500"
             >
-              <img
-                src={item.icon}
-                alt={`Icon ${index + 1}`}
-                className="w-6 h-6"
-              />
+              <img src={item.icon} alt={item.label} className="w-6 h-6" />
               <span>{item.label}</span>
             </Link>
           ))}
         </nav>
 
+        {/* Language Selector and Login Button */}
         <div className="flex items-center space-x-4">
           <select
             className="bg-black text-white border border-gray-500 rounded px-2 py-1 focus:outline-none"
@@ -76,7 +75,7 @@ const Header = () => {
             <option value="uz">O‘zb</option>
           </select>
           <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 transition">
-            {currentTranslation.login}
+            {login}
           </button>
         </div>
       </div>

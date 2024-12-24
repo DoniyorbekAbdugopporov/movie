@@ -13,10 +13,10 @@ const Home = () => {
   const [page, setPage] = React.useState(1);
 
   const { data: genres, isLoading: genresLoading } = useQuery({
-    queryKey: ["genres"],
-    queryFn: () =>
-      request.get("/genre/movie/list").then((res) => res.data.genres),
-  });
+      queryKey: ["genres"],
+      queryFn: () =>
+        request.get("/genre/movie/list").then((res) => res.data.genres),
+    });
 
   const { data: movies, isLoading: moviesLoading } = useQuery({
     queryKey: ["movies", page, selectedGenre],
@@ -60,42 +60,8 @@ const Home = () => {
       ) : (
         <>
           <Carousel data={movies} />
-          <Genre
-            data={genres || []}
-            setSelectedGenre={setSelectedGenre}
-            selectedGenre={selectedGenre}
-            isLoading={genresLoading}
-          />
+          
           <Movies data={movies || { results: [] }} />
-          <div className="flex justify-center py-10">
-            <Pagination
-              page={page}
-              onChange={handlePageChange}
-              count={Math.min(movies?.total_pages || 1, 500)} // Max 500 pages
-              sx={{
-                "& .MuiPaginationItem-root": {
-                  color: "#fff",
-                  backgroundColor: "#1a1a1a",
-                  border: "1px solid #ff4040",
-                  "&:hover": {
-                    backgroundColor: "#ff4040",
-                    color: "#fff",
-                  },
-                },
-                "& .Mui-selected": {
-                  backgroundColor: "#ff4040",
-                  color: "#fff",
-                  border: "1px solid #ff7373",
-                  "&:hover": {
-                    backgroundColor: "#ff7373",
-                  },
-                },
-                "& .MuiPaginationItem-ellipsis": {
-                  color: "#ff7373",
-                },
-              }}
-            />
-          </div>
         </>
       )}
     </div>

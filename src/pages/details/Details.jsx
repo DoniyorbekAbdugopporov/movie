@@ -108,9 +108,10 @@ const Details = () => {
     const remainingMinutes = minutes % 60; // Qolgan daqiqalar
     return `${hours}ч ${remainingMinutes}м / ${minutes} минут`;
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
 
   return (
     <div className="bg-secondary">

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Movies = ({ data ,isDetail}) => {
   console.log(data);
   return (
-    <div>
+    <div className="bg-black pt-10">
       <div className=" relative flex gap-2 justify-center flex-wrap container">
         {isDetail ? (
           <h3 className="text-white text-xl absolute left-7 -top-10">
