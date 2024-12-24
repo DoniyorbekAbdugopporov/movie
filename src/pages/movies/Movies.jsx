@@ -4,6 +4,7 @@ import { request } from "@/api";
 import Genre from "@/components/genre/Genre";
 import MoviesList from "@/components/movies/Movies";
 import Pagination from "@mui/material/Pagination";
+import MoviesGrid from "@/components/movies/MoviesGrid";
 
 const MoviesPage = () => {
   const [selectedGenre, setSelectedGenre] = useState([]);
@@ -62,7 +63,7 @@ const MoviesPage = () => {
         selectedGenre={selectedGenre}
         isLoading={genresLoading}
       />
-      <MoviesList data={movies || { results: [] }} />
+      <MoviesGrid data={movies || { results: [] }} />
       <div className="flex justify-center py-10 bg-black">
         <Pagination
           page={page}
