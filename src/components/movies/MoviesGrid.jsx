@@ -5,7 +5,7 @@ const Movies = ({ data }) => {
   if (!data || data.results.length === 0) {
     return (
       <div className="text-center py-10">
-        <p className="text-white text-lg">Hech qanday ma'lumot topilmadi!</p>
+        <p className="text-white text-lg">Data not found!</p>
       </div>
     );
   }
